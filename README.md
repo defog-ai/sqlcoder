@@ -36,7 +36,8 @@ We classified each generated question into one of 5 categories. These are the pe
 You can use SQLCoder via the `transformers` library by downloading our model weights from the HuggingFace repo. We have added sample code for inference here. You can also use a demo on our website [here](https://defog.ai/sqlcoder).
 
 ## Todo
-[x] Open-source the model weights
-[] Train the model on more data, with higher data variance
-[] Tune the model further with Reward Modelling and RLHF
-[] Pretrain a model from scratch that specializes in SQL analysis
+
+- [x] Open-source the v1 model weights
+- [ ] Train the model on more data, with higher data variance
+- [ ] Tune the model further with Reward Modelling and RLHF
+- [ ] Pretrain a model from scratch that specializes in SQL analysis
