@@ -24,7 +24,7 @@ Training happened in 2 phases. The first phase was on questions that were classi
 
 ## Results by question category
 We classified each generated question into one of 5 categories. These are the percentage of questions that each model got correct for each category
-| query_category | gpt-4 | defog-sql-coder | gpt-3.5-turbo | defog-easy | text-davinci-003 | wizardcoder | starcoder |
+| query_category | gpt-4 | defog-sql-coder | gpt-3.5-turbo | defog-easy | text-davinci-003 | wizard-coder | star-coder |
 |-|-|-|-|-|-|-|-|  
 | group_by | 82.9 | 77.1 | 71.4 | 62.9 | 62.9 | 68.6 | 54.3 |
 | order_by | 71.4 | 65.7 | 60.0 | 68.6 | 60.0 | 54.3 | 57.1 |
