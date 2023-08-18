@@ -1,0 +1,40 @@
+CREATE TABLE products (
+  product_id INTEGER PRIMARY KEY,
+  name VARCHAR(50),
+  price DECIMAL(10,2),
+  quantity INTEGER  
+);
+
+CREATE TABLE customers (
+  customer_id INTEGER PRIMARY KEY,
+  name VARCHAR(50),
+  address VARCHAR(100)
+);
+
+CREATE TABLE salespeople (
+  salesperson_id INTEGER PRIMARY KEY, 
+  name VARCHAR(50),
+  region VARCHAR(50)
+);
+
+CREATE TABLE sales (
+  sale_id INTEGER PRIMARY KEY,
+  product_id INTEGER,
+  customer_id INTEGER,
+  salesperson_id INTEGER,
+  sale_date DATE,
+  quantity INTEGER
+);
+
+CREATE TABLE product_suppliers (
+  supplier_id INTEGER PRIMARY KEY,
+  product_id INTEGER,
+  supply_price DECIMAL(10,2)
+);
+
+===
+Joinable table/column combinations:
+- sales.product_id can be joined with products.product_id
+- sales.customer_id can be joined with customers.customer_id 
+- sales.salesperson_id can be joined with salespeople.salesperson_id
+- product_suppliers.product_id can be joined with products.product_id
