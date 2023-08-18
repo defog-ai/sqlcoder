@@ -1,7 +1,7 @@
 # Defog SQLCoder
 Defog's SQLCoder is a state of the art LLM for converting natural language questions to SQL queries.
 
-[🤗 HF Repo](https://huggingface.co/defog/sql-coder) | [Twitter](https://twitter.com/defogdata)
+[🤗 HF Repo](https://huggingface.co/defog/sqlcoder) | [Twitter](https://twitter.com/defogdata)
 
 ## TL;DR
 SQLCoder is a 15B parameter model that slightly outperforms gpt-3.5-turbo for natural language to SQL generation tasks on our [sql-eval](https://github.com/defog-ai/sql-eval) framework, and significantly outperforms all popular open-source models. It also significantly outperforms `text-davinci-003`, a model that's more than 10 times its size.
@@ -28,7 +28,7 @@ The results of training on our easy+medium data were stored in a model called `d
 
 ## Results by question category
 We classified each generated question into one of 5 categories. These are the percentage of questions that each model got correct for each category
-| query_category | gpt-4 | defog-sql-coder | gpt-3.5-turbo | defog-easy | text-davinci-003 | wizard-coder | star-coder |
+| query_category | gpt-4 | defog-sqlcoder | gpt-3.5-turbo | defog-easy | text-davinci-003 | wizard-coder | star-coder |
 |-|-|-|-|-|-|-|-|  
 | group_by | 82.9 | 77.1 | 71.4 | 62.9 | 62.9 | 68.6 | 54.3 |
 | order_by | 71.4 | 65.7 | 60.0 | 68.6 | 60.0 | 54.3 | 57.1 |
