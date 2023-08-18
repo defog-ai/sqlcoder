@@ -1,7 +1,7 @@
 # Defog SQLCoder
 Defog's SQLCoder is a state of the art LLM for converting natural language questions to SQL queries.
 
-[🤗 HF Repo](https://huggingface.co/defog/sqlcoder) | [Twitter](https://twitter.com/defogdata)
+[🤗 HF Repo](https://huggingface.co/defog/sqlcoder) | [♾️ Colab](https://drive.google.com/file/d/13BIKsqHnPOBcQ-ba2p77L5saiepTIwu0/view?usp=sharing) | [🐦 Twitter](https://twitter.com/defogdata)
 
 ## TL;DR
 SQLCoder is a 15B parameter model that slightly outperforms gpt-3.5-turbo for natural language to SQL generation tasks on our [sql-eval](https://github.com/defog-ai/sql-eval) framework, and significantly outperforms all popular open-source models. It also significantly outperforms `text-davinci-003`, a model that's more than 10 times its size.
@@ -37,7 +37,7 @@ We classified each generated question into one of 5 categories. These are the pe
 | where | 80.0 | 65.7 | 62.9 | 60.0 | 60.0 | 60.0 | 45.7 |
 
 ## Using SQLCoder
-You can use SQLCoder via the `transformers` library by downloading our model weights from the HuggingFace repo. We have added sample code for inference here. You can also use a demo on our website [here](https://defog.ai/sqlcoder).
+You can use SQLCoder via the `transformers` library by downloading our model weights from the HuggingFace repo. We have added sample code for inference [here](./inference.py). You can also use a demo on our website [here](https://defog.ai/sqlcoder), or run SQLCoder in Colab [here](https://colab.research.google.com/drive/13BIKsqHnPOBcQ-ba2p77L5saiepTIwu0#scrollTo=ZpbVgVHMkJvC)
 
 ## Hardware Requirements
 SQLCoder has been tested on an A100 40GB GPU with `bfloat16` weights. You can also load an 8-bit quantized version of the model on consumer GPUs with 20GB or more of memory – like RTX 4090, RTX 3090, and Apple M2 Pro, M2 Max, or M2 Ultra Chips with 20GB or more of memory.
