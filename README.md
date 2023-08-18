@@ -22,6 +22,8 @@ Defog was trained on 10,537 human-curated questions across 2 epochs. These quest
 
 Training happened in 2 phases. The first phase was on questions that were classified as "easy" or "medium" difficulty, and the second phase was on questions that were classified as "hard" or "extra hard" difficulty. You can read more about the dataset creation and classification process [here](https://defog.ai/blog/defog-sql-coder-dataset-creation).
 
+The results of our "easy" data were stored in a model called `defog-easy`. We found that the additional training on "hard" led to a 7 percentage point increase in performance.
+
 ## Results by question category
 We classified each generated question into one of 5 categories. These are the percentage of questions that each model got correct for each category
 | query_category | gpt-4 | defog-sql-coder | gpt-3.5-turbo | defog-easy | text-davinci-003 | wizard-coder | star-coder |
