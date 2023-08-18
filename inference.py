@@ -3,7 +3,7 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 
-def generate_prompt(question, prompt_file="prompt.md", metadata_file="metadata.txt"):
+def generate_prompt(question, prompt_file="prompt.md", metadata_file="metadata.sql"):
     with open(prompt_file, "r") as f:
         prompt = f.read()
     
@@ -27,7 +27,7 @@ def get_tokenizer_model(model_name):
     )
     return tokenizer, model
 
-def run_inference(question, prompt_file="prompt.md", metadata_file="metadata.txt"):
+def run_inference(question, prompt_file="prompt.md", metadata_file="metadata.sql"):
     tokenizer, model = get_tokenizer_model("defog/starcoder-finetune-v3")
     prompt = generate_prompt(question, prompt_file, metadata_file)
     

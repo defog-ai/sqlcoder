@@ -32,9 +32,7 @@ CREATE TABLE product_suppliers (
   supply_price DECIMAL(10,2) -- Unit price charged by supplier
 );
 
-===
-Joinable table/column combinations:
-- sales.product_id can be joined with products.product_id
-- sales.customer_id can be joined with customers.customer_id 
-- sales.salesperson_id can be joined with salespeople.salesperson_id
-- product_suppliers.product_id can be joined with products.product_id
+-- sales.product_id can be joined with products.product_id
+-- sales.customer_id can be joined with customers.customer_id 
+-- sales.salesperson_id can be joined with salespeople.salesperson_id
+-- product_suppliers.product_id can be joined with products.product_id
