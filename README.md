@@ -1,10 +1,10 @@
 # Defog SQLCoder
-Defog's SQLCoder is a state of the art LLM for converting natural language questions to SQL queries.
+Defog's SQLCoder is a state-of-the-art LLM for converting natural language questions to SQL queries.
 
 [🤗 HF Repo](https://huggingface.co/defog/sqlcoder) | [♾️ Colab](https://drive.google.com/file/d/13BIKsqHnPOBcQ-ba2p77L5saiepTIwu0/view?usp=sharing) | [🐦 Twitter](https://twitter.com/defogdata)
 
 ## TL;DR
-SQLCoder is a 15B parameter model that slightly outperforms gpt-3.5-turbo for natural language to SQL generation tasks on our [sql-eval](https://github.com/defog-ai/sql-eval) framework, and significantly outperforms all popular open-source models. It also significantly outperforms `text-davinci-003`, a model that's more than 10 times its size.
+SQLCoder is a 15B parameter model that slightly outperforms `gpt-3.5-turbo` for natural language to SQL generation tasks on our [sql-eval](https://github.com/defog-ai/sql-eval) framework, and significantly outperforms all popular open-source models. It also significantly outperforms `text-davinci-003`, a model that's more than 10 times its size.
 
 SQLCoder is fine-tuned on a base StarCoder model.
 
@@ -24,10 +24,10 @@ Defog was trained on 10,537 human-curated questions across 2 epochs. These quest
 
 Training happened in 2 phases. The first phase was on questions that were classified as "easy" or "medium" difficulty, and the second phase was on questions that were classified as "hard" or "extra hard" difficulty. You can read more about the dataset creation and classification process [here](https://defog.ai/blog/defog-sqlcoder-dataset-creation).
 
-The results of training on our easy+medium data were stored in a model called `defog-easy`. We found that the additional training on hard+extra-hard adta led to a 7 percentage point increase in performance.
+The results of training on our easy+medium data were stored in a model called `defog-easy`. We found that the additional training on hard+extra-hard data led to a 7 percentage point increase in performance.
 
 ## Results by question category
-We classified each generated question into one of 5 categories. These are the percentage of questions that each model got correct for each category
+We classified each generated question into one of 5 categories. The table displays the percentage of questions answered correctly by each model, broken down by category.
 | query_category | gpt-4 | defog-sqlcoder | gpt-3.5-turbo | defog-easy | text-davinci-003 | wizard-coder | star-coder |
 |-|-|-|-|-|-|-|-|  
 | group_by | 82.9 | 77.1 | 71.4 | 62.9 | 62.9 | 68.6 | 54.3 |
