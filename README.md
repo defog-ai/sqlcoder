@@ -12,9 +12,9 @@ SQLCoder is fine-tuned on a base StarCoder model.
 | model   | perc_correct |
 |-|-|  
 | gpt-4            | 74.3 |
-| defog-sql-coder  | 64.6 |
+| defog-sqlcoder   | 64.6 |
 | gpt-3.5-turbo    | 60.6 |
-| defog-easy       | 57.1 |   
+| defog-easysql    | 57.1 |   
 | text-davinci-003 | 54.3 |
 | wizardcoder      | 52.0 |
 | starcoder        | 45.1 |
@@ -22,7 +22,7 @@ SQLCoder is fine-tuned on a base StarCoder model.
 ## Training
 Defog was trained on 10,537 human-curated questions across 2 epochs. These questions were based on 10 different schemas. None of the schemas in the training data were included in our evaluation framework.
 
-Training happened in 2 phases. The first phase was on questions that were classified as "easy" or "medium" difficulty, and the second phase was on questions that were classified as "hard" or "extra hard" difficulty. You can read more about the dataset creation and classification process [here](https://defog.ai/blog/defog-sql-coder-dataset-creation).
+Training happened in 2 phases. The first phase was on questions that were classified as "easy" or "medium" difficulty, and the second phase was on questions that were classified as "hard" or "extra hard" difficulty. You can read more about the dataset creation and classification process [here](https://defog.ai/blog/defog-sqlcoder-dataset-creation).
 
 The results of training on our easy+medium data were stored in a model called `defog-easy`. We found that the additional training on hard+extra-hard adta led to a 7 percentage point increase in performance.
 

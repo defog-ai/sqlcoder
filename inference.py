@@ -1,7 +1,6 @@
-# Loads of stuff to fix here – but that's for much later
-
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+import argparse
 
 def generate_prompt(question, prompt_file="prompt.md", metadata_file="metadata.sql"):
     with open(prompt_file, "r") as f:
@@ -55,3 +54,12 @@ def run_inference(question, prompt_file="prompt.md", metadata_file="metadata.sql
         + ";"
     )
     return generated_query
+
+if __name__ == "__main__":
+    # Parse arguments
+    parser = argparse.ArgumentParser(description="Run inference on a question")
+    parser.add_argument("--question", type=str, help="Question to run inference on")
+    args = parser.parse_args()
+    question = args.question
+    print("Loading a model and generating a SQL query for answering your question...")
+    print(run_inference(question))
