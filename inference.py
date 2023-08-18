@@ -27,7 +27,7 @@ def get_tokenizer_model(model_name):
     return tokenizer, model
 
 def run_inference(question, prompt_file="prompt.md", metadata_file="metadata.sql"):
-    tokenizer, model = get_tokenizer_model("defog/starcoder-finetune-v3")
+    tokenizer, model = get_tokenizer_model("defog/sqlcoder")
     prompt = generate_prompt(question, prompt_file, metadata_file)
     
     # make sure the model stops generating at triple ticks
@@ -58,7 +58,7 @@ def run_inference(question, prompt_file="prompt.md", metadata_file="metadata.sql
 if __name__ == "__main__":
     # Parse arguments
     parser = argparse.ArgumentParser(description="Run inference on a question")
-    parser.add_argument("--question", type=str, help="Question to run inference on")
+    parser.add_argument("-q","--question", type=str, help="Question to run inference on")
     args = parser.parse_args()
     question = args.question
     print("Loading a model and generating a SQL query for answering your question...")
