@@ -23,11 +23,13 @@ SQLCoder is fine-tuned on a base StarCoder model.
 The code in this repo (what little there is of it) is Apache-2 licensed. The model weights have a `CC BY-SA 4.0` license. The TL;DR is that you can use and modify the model for any purpose – including commercial use. However, if you modify the weights (for example, by fine-tuning), you must open-source your modified weights under the same license terms.
 
 ## Training
-Defog was trained on 10,537 human-curated questions across 2 epochs. These questions were based on 10 different schemas. None of the schemas in the training data were included in our evaluation framework.
+Defog was trained on 10,537 human-curated questions across 2 epochs. These questions were based on 10 different schemas. None of the schemas in the training data were included in our evaluation framework. 
 
 Training happened in 2 phases. The first phase was on questions that were classified as "easy" or "medium" difficulty, and the second phase was on questions that were classified as "hard" or "extra hard" difficulty.
 
 The results of training on our easy+medium data were stored in a model called `defog-easy`. We found that the additional training on hard+extra-hard data led to a 7 percentage point increase in performance.
+
+You can read more about our [training approach](https://defog.ai/blog/open-sourcing-sqlcoder/) and [evaluation framework](https://defog.ai/blog/open-sourcing-sqleval/).
 
 ## Results by question category
 We classified each generated question into one of 5 categories. The table displays the percentage of questions answered correctly by each model, broken down by category.
@@ -44,7 +46,8 @@ You can use SQLCoder via the `transformers` library by downloading our model wei
 ```bash
 python inference.py -q "Question about the sample database goes here"
 
-# Sample questions:
+# Sample question:
+# Do we get more revenue from customers in New York compared to customers in San Francisco? Give me the total revenue for each city, and the difference between the two.
 ```
 
 You can also use a demo on our website [here](https://defog.ai/sqlcoder-demo), or run SQLCoder in Colab [here](https://colab.research.google.com/drive/13BIKsqHnPOBcQ-ba2p77L5saiepTIwu0#scrollTo=ZpbVgVHMkJvC)
