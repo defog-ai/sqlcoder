@@ -52,6 +52,10 @@ You can also use a demo on our website [here](https://defog.ai/sqlcoder-demo), o
 ## Hardware Requirements
 SQLCoder has been tested on an A100 40GB GPU with `bfloat16` weights. You can also load an 8-bit and 4-bit quantized version of the model on consumer GPUs with 20GB or more of memory – like RTX 4090, RTX 3090, and Apple M2 Pro, M2 Max, or M2 Ultra Chips with 20GB or more of memory.
 
+## Coming soon
+- documentation of our pruning algorithm that prunes the size of your metadata schema to just the relevant columns
+- ggml-quantized model that you can run on a Macbook
+
 ## Todo
 
 - [x] Open-source the v1 model weights
