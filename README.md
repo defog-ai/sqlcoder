@@ -42,7 +42,7 @@ We classified each generated question into one of 5 categories. The table displa
 | where | 80.0 | 65.7 | 62.9 | 60.0 | 60.0 | 60.0 | 45.7 |
 
 ## Using SQLCoder
-You can use SQLCoder via the `transformers` library by downloading our model weights from the HuggingFace repo. We have added sample code for [inference](./inference.py) on a [sample database schema](./metadata.sql). 
+You can use SQLCoder via the `transformers` library by downloading our model weights from the Hugging Face repo. We have added sample code for [inference](./inference.py) on a [sample database schema](./metadata.sql). 
 ```bash
 python inference.py -q "Question about the sample database goes here"
 
