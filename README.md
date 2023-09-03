@@ -11,13 +11,12 @@ SQLCoder is fine-tuned on a base StarCoder model.
 ## Results
 | model   | perc_correct |
 |-|-|  
-| gpt-4            | 74.3 |
-| defog-sqlcoder   | 64.6 |
-| gpt-3.5-turbo    | 60.6 |
-| defog-easysql    | 57.1 |   
-| text-davinci-003 | 54.3 |
-| wizardcoder      | 52.0 |
-| starcoder        | 45.1 |
+| gpt4-2023-08-28    | 73.7 |
+| defog-sqlcoder     | 65.7 |
+| gpt-3.5-2023-08-28 | 61.1 |
+| text-davinci-003   | 57.1 |
+| wizardcoder        | 52.6 |
+| starcoder          | 45.7 |
 
 ## License
 The code in this repo (what little there is of it) is Apache-2 licensed. The model weights have a `CC BY-SA 4.0` license. The TL;DR is that you can use and modify the model for any purpose – including commercial use. However, if you modify the weights (for example, by fine-tuning), you must open-source your modified weights under the same license terms.
@@ -33,13 +32,13 @@ You can read more about our [training approach](https://defog.ai/blog/open-sourc
 
 ## Results by question category
 We classified each generated question into one of 5 categories. The table displays the percentage of questions answered correctly by each model, broken down by category.
-| query_category | gpt-4 | defog-sqlcoder | gpt-3.5-turbo | defog-easy | text-davinci-003 | wizard-coder | star-coder |
-|-|-|-|-|-|-|-|-|  
-| group_by | 82.9 | 77.1 | 71.4 | 62.9 | 62.9 | 68.6 | 54.3 |
-| order_by | 71.4 | 65.7 | 60.0 | 68.6 | 60.0 | 54.3 | 57.1 |
-| ratio | 62.9 | 57.1 | 48.6 | 40.0 | 37.1 | 22.9 | 17.1 |
-| table_join | 74.3 | 57.1 | 60.0 | 54.3 | 51.4 | 54.3 | 51.4 |
-| where | 80.0 | 65.7 | 62.9 | 60.0 | 60.0 | 60.0 | 45.7 |
+| query_category | gpt-4 | defog-sqlcoder | gpt-3.5-turbo | text-davinci-003 | wizard-coder | star-coder |
+|-|-|-|-|-|-|-|  
+| group_by | 80.0 | 77.1 | 74.3 | 60.0 | 68.6 | 54.3 |
+| order_by | 71.4 | 65.7 | 60.0 | 60.0 | 54.3 | 57.1 |
+| ratio | 57.1 | 57.1 | 48.6 | 42.9 | 22.9 | 17.1 |
+| table_join | 80.0 | 62.9 | 60.0 | 60.0 | 57.1 | 54.3 |
+| where | 80.0 | 65.7 | 65.7 | 62.9 | 60.0 | 45.7 |
 
 ## Using SQLCoder
 You can use SQLCoder via the `transformers` library by downloading our model weights from the Hugging Face repo. We have added sample code for [inference](./inference.py) on a [sample database schema](./metadata.sql). 
