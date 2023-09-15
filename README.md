@@ -8,7 +8,7 @@ SQLCoder is a 15B parameter model that outperforms `gpt-3.5-turbo` for natural l
 
 SQLCoder is fine-tuned on a base StarCoder model.
 
-## Results on out of novel datasets not seen in training
+## Results on novel datasets not seen in training
 | model   | perc_correct |
 |-|-|  
 | gpt4-2023-08-28    | 73.7 |
