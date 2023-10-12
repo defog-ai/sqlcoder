@@ -34,11 +34,11 @@ You can read more about our [training approach](https://defog.ai/blog/open-sourc
 We classified each generated question into one of 5 categories. The table displays the percentage of questions answered correctly by each model, broken down by category.
 | query_category   |   gpt-4 |   sqlcoder2-15b |   sqlcoder-7b |   gpt-3.5 |   claude-2 |   claude-instant |   gpt-3 |
 |:-----------------|--------:|----------------:|--------------:|----------:|-----------:|-----------------:|--------:|
-| date             |    72   |            76   |          64   |      68   |       52   |             48   |    32   |
-| group_by         |    91.4 |            80   |          82.9 |      77.1 |       71.4 |             71.4 |    71.4 |
+| date             |    72   |            80   |          64   |      68   |       52   |             48   |    32   |
+| group_by         |    91.4 |            82.9 |          82.9 |      77.1 |       71.4 |             71.4 |    71.4 |
 | order_by         |    82.9 |            77.1 |          74.3 |      68.6 |       74.3 |             74.3 |    68.6 |
-| ratio            |    80   |            60   |          54.3 |      37.1 |       57.1 |             45.7 |    25.7 |
-| join             |    82.9 |            77.1 |          74.3 |      71.4 |       65.7 |             62.9 |    57.1 |
+| ratio            |    80   |            74.3 |          54.3 |      37.1 |       57.1 |             45.7 |    25.7 |
+| join             |    82.9 |            74.3 |          74.3 |      71.4 |       65.7 |             62.9 |    57.1 |
 | where            |    80   |            77.1 |          74.3 |      74.3 |       62.9 |             60   |    54.3 |
 
 ## Using SQLCoder
