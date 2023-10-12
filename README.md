@@ -13,7 +13,7 @@ SQLCoder is fine-tuned on a base StarCoder model.
 | model   | perc_correct |
 |-|-|  
 | gpt4-2023-10-04    | 82.0 |
-| defog-sqlcoder2    | 74.5 |
+| defog-sqlcoder2    | 77.5 |
 | gpt4-2023-08-28    | 74.0 |
 | defog-sqlcoder-7b  | 71.0 |
 | gpt-3.5-2023-10-04 | 66.0 |
