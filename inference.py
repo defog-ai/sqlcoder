@@ -31,7 +31,8 @@ def run_inference(question, prompt_file="prompt.md", metadata_file="metadata.sql
     prompt = generate_prompt(question, prompt_file, metadata_file)
     
     # make sure the model stops generating at triple ticks
-    eos_token_id = tokenizer.convert_tokens_to_ids(["```"])[0]
+    # eos_token_id = tokenizer.convert_tokens_to_ids(["```"])[0]
+    eos_token_id = tokenizer.eos_token_id
     pipe = pipeline(
         "text-generation",
         model=model,
