@@ -25,6 +25,9 @@ SQLCoder is fine-tuned on a base StarCoder model.
 | claude_instant_1      | 61.0 |
 | text-davinci-003      | 52.5 |
 
+![image](https://github.com/defog-ai/sqlcoder/assets/5008293/caed3423-8e86-4952-9da1-1a5e016a4696)
+
+
 ## License
 The code in this repo (what little there is of it) is Apache-2 licensed. The model weights have a `CC BY-SA 4.0` license. The TL;DR is that you can use and modify the model for any purpose – including commercial use. However, if you modify the weights (for example, by fine-tuning), you must open-source your modified weights under the same license terms.
 
@@ -45,6 +48,9 @@ We classified each generated question into one of 5 categories. The table displa
 | claude-2       | 52   | 71.4     | 74.3     | 57.1  | 65.7 | 62.9  |
 | claude-instant | 48   | 71.4     | 74.3     | 45.7  | 62.9 | 60    |
 | gpt-3          | 32   | 71.4     | 68.6     | 25.7  | 57.1 | 54.3  |
+
+<img width="831" alt="image" src="https://github.com/defog-ai/sqlcoder/assets/5008293/79c5bdc8-373c-4abd-822e-e2c2569ed353">
+
 
 ## Using SQLCoder
 You can use SQLCoder via the `transformers` library by downloading our model weights from the Hugging Face repo. We have added sample code for [inference](./inference.py) on a [sample database schema](./metadata.sql). 
