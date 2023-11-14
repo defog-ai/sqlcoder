@@ -6,9 +6,9 @@ Defog's SQLCoder is a state-of-the-art LLM for converting natural language quest
 [Interactive Demo](https://defog.ai/sqlcoder-demo/) | [🤗 HF Repo](https://huggingface.co/defog/sqlcoder-34b-alpha) | [♾️ Colab](https://colab.research.google.com/drive/1z4rmOEiFkxkMiecAWeTUlPl0OmKgfEu7?usp=sharing) | [🐦 Twitter](https://twitter.com/defogdata)
 
 ## TL;DR
-SQLCoder is a 15B parameter model that outperforms `gpt-3.5-turbo` for natural language to SQL generation tasks on our [sql-eval](https://github.com/defog-ai/sql-eval) framework, and significantly outperforms all popular open-source models. When fine-tuned on a given schema, it also outperforms `gpt-4`
+SQLCoder-34B is a 34B parameter model that outperforms `gpt-4` and `gpt-4-turbo` for natural language to SQL generation tasks on our [sql-eval](https://github.com/defog-ai/sql-eval) framework, and significantly outperforms all popular open-source models.
 
-SQLCoder is fine-tuned on a base StarCoder model.
+SQLCoder-34B is fine-tuned on a base CodeLlama model.
 
 ## Results on novel datasets not seen in training
 | model   | perc_correct |
