@@ -35,14 +35,16 @@ You can read more about our [training approach](https://defog.ai/blog/open-sourc
 
 ## Results by question category
 We classified each generated question into one of 5 categories. The table displays the percentage of questions answered correctly by each model, broken down by category.
-| query_category   |   gpt-4 |   sqlcoder2-15b |   sqlcoder-7b |   gpt-3.5 |   claude-2 |   claude-instant |   gpt-3 |
-|:-----------------|--------:|----------------:|--------------:|----------:|-----------:|-----------------:|--------:|
-| date             |    72   |            80   |          64   |      68   |       52   |             48   |    32   |
-| group_by         |    91.4 |            82.9 |          82.9 |      77.1 |       71.4 |             71.4 |    71.4 |
-| order_by         |    82.9 |            77.1 |          74.3 |      68.6 |       74.3 |             74.3 |    68.6 |
-| ratio            |    80   |            74.3 |          54.3 |      37.1 |       57.1 |             45.7 |    25.7 |
-| join             |    82.9 |            74.3 |          74.3 |      71.4 |       65.7 |             62.9 |    57.1 |
-| where            |    80   |            77.1 |          74.3 |      74.3 |       62.9 |             60   |    54.3 |
+|                | date | group_by | order_by | ratio | join | where |
+| -------------- | ---- | -------- | -------- | ----- | ---- | ----- |
+| sqlcoder-34b   | 80   | 94.3     | 88.6     | 74.3  | 82.9 | 82.9  |
+| gpt-4          | 68   | 94.3     | 85.7     | 77.1  | 85.7 | 80    |
+| sqlcoder2-15b  | 76   | 80       | 77.1     | 60    | 77.1 | 77.1  |
+| sqlcoder-7b    | 64   | 82.9     | 74.3     | 54.3  | 74.3 | 74.3  |
+| gpt-3.5        | 68   | 77.1     | 68.6     | 37.1  | 71.4 | 74.3  |
+| claude-2       | 52   | 71.4     | 74.3     | 57.1  | 65.7 | 62.9  |
+| claude-instant | 48   | 71.4     | 74.3     | 45.7  | 62.9 | 60    |
+| gpt-3          | 32   | 71.4     | 68.6     | 25.7  | 57.1 | 54.3  |
 
 ## Using SQLCoder
 You can use SQLCoder via the `transformers` library by downloading our model weights from the Hugging Face repo. We have added sample code for [inference](./inference.py) on a [sample database schema](./metadata.sql). 
