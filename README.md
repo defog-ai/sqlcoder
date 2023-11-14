@@ -1,8 +1,9 @@
 # Defog SQLCoder
-**Updated on Oct 4 to reflect benchmarks for SQLCoder2 and SQLCoder-7B**
+**Updated on Nov 14 to reflect benchmarks for SQLCoder-34B**
+
 Defog's SQLCoder is a state-of-the-art LLM for converting natural language questions to SQL queries.
 
-[Interactive Demo](https://defog.ai/sqlcoder-demo/) | [🤗 HF Repo](https://huggingface.co/defog/sqlcoder2) | [♾️ Colab](https://colab.research.google.com/drive/1z4rmOEiFkxkMiecAWeTUlPl0OmKgfEu7?usp=sharing) | [🐦 Twitter](https://twitter.com/defogdata)
+[Interactive Demo](https://defog.ai/sqlcoder-demo/) | [🤗 HF Repo](https://huggingface.co/defog/sqlcoder-34b-alpha) | [♾️ Colab](https://colab.research.google.com/drive/1z4rmOEiFkxkMiecAWeTUlPl0OmKgfEu7?usp=sharing) | [🐦 Twitter](https://twitter.com/defogdata)
 
 ## TL;DR
 SQLCoder is a 15B parameter model that outperforms `gpt-3.5-turbo` for natural language to SQL generation tasks on our [sql-eval](https://github.com/defog-ai/sql-eval) framework, and significantly outperforms all popular open-source models. When fine-tuned on a given schema, it also outperforms `gpt-4`
@@ -11,16 +12,18 @@ SQLCoder is fine-tuned on a base StarCoder model.
 
 ## Results on novel datasets not seen in training
 | model   | perc_correct |
-|-|-|  
-| gpt4-2023-10-04    | 82.0 |
-| defog-sqlcoder2    | 77.5 |
-| gpt4-2023-08-28    | 74.0 |
-| defog-sqlcoder-7b  | 71.0 |
-| gpt-3.5-2023-10-04 | 66.0 |
-| claude-2           | 64.5 |
-| gpt-3.5-2023-08-28 | 61.0 |
-| claude_instant_1   | 61.0 |
-| text-davinci-003   | 52.5 |
+|-|-|
+| defog-sqlcoder-34b    | 84.0 |
+| gpt4-turbo-2023-11-09 | 82.5 |
+| gpt4-2023-11-09       | 82.5 |
+| defog-sqlcoder2       | 77.5 |
+| gpt4-2023-08-28       | 74.0 |
+| defog-sqlcoder-7b     | 71.0 |
+| gpt-3.5-2023-10-04    | 66.0 |
+| claude-2              | 64.5 |
+| gpt-3.5-2023-08-28    | 61.0 |
+| claude_instant_1      | 61.0 |
+| text-davinci-003      | 52.5 |
 
 ## License
 The code in this repo (what little there is of it) is Apache-2 licensed. The model weights have a `CC BY-SA 4.0` license. The TL;DR is that you can use and modify the model for any purpose – including commercial use. However, if you modify the weights (for example, by fine-tuning), you must open-source your modified weights under the same license terms.
@@ -50,10 +53,10 @@ python inference.py -q "Question about the sample database goes here"
 # Do we get more revenue from customers in New York compared to customers in San Francisco? Give me the total revenue for each city, and the difference between the two.
 ```
 
-You can also use a demo on our website [here](https://defog.ai/sqlcoder-demo), or run SQLCoder in Colab [here](https://colab.research.google.com/drive/13BIKsqHnPOBcQ-ba2p77L5saiepTIwu0#scrollTo=ZpbVgVHMkJvC)
+You can also use a demo on our website [here](https://defog.ai/sqlcoder-demo)
 
 ## Hardware Requirements
-SQLCoder has been tested on an A100 40GB GPU with `bfloat16` weights. You can also load an 8-bit and 4-bit quantized version of the model on consumer GPUs with 20GB or more of memory – like RTX 4090, RTX 3090, and Apple M2 Pro, M2 Max, or M2 Ultra Chips with 20GB or more of memory.
+SQLCoder-34B has been tested on a 4xA10 GPU with `float16` weights. You can also load an 8-bit and 4-bit quantized version of the model on consumer GPUs with 20GB or more of memory – like RTX 4090, RTX 3090, and Apple M2 Pro, M2 Max, or M2 Ultra Chips with 20GB or more of memory.
 
 ## Todo
 
