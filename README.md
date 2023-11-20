@@ -61,7 +61,7 @@ python inference.py -q "Question about the sample database goes here"
 # Do we get more revenue from customers in New York compared to customers in San Francisco? Give me the total revenue for each city, and the difference between the two.
 ```
 
-You can also use a demo on our website [here](https://defog.ai/sqlcoder-demo)
+You can also use a demo on our website [here](https://defog.ai/sqlcoder-demo).
 
 ## Hardware Requirements
 SQLCoder-34B has been tested on a 4xA10 GPU with `float16` weights. You can also load an 8-bit and 4-bit quantized version of the model on consumer GPUs with 20GB or more of memory – like RTX 4090, RTX 3090, and Apple M2 Pro, M2 Max, or M2 Ultra Chips with 20GB or more of memory.
