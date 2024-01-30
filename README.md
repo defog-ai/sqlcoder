@@ -6,27 +6,26 @@ Defog's SQLCoder is a state-of-the-art LLM for converting natural language quest
 [Interactive Demo](https://defog.ai/sqlcoder-demo/) | [🤗 HF Repo](https://huggingface.co/defog/sqlcoder-34b-alpha) | [♾️ Colab](https://colab.research.google.com/drive/1z4rmOEiFkxkMiecAWeTUlPl0OmKgfEu7?usp=sharing) | [🐦 Twitter](https://twitter.com/defogdata)
 
 ## TL;DR
-SQLCoder-34B is a 34B parameter model that outperforms `gpt-4` and `gpt-4-turbo` for natural language to SQL generation tasks on our [sql-eval](https://github.com/defog-ai/sql-eval) framework, and significantly outperforms all popular open-source models.
+SQLCoder is a family of large language models that outperforms `gpt-4` and `gpt-4-turbo` for natural language to SQL generation tasks on our [sql-eval](https://github.com/defog-ai/sql-eval) framework, and significantly outperform all popular open-source models.
 
-SQLCoder-34B is fine-tuned on a base CodeLlama model.
+SQLCoder-70B and SQLCoder-34B are fine-tuned on a base CodeLlama model.
 
 ## Results on novel datasets not seen in training
 | model   | perc_correct |
 |-|-|
+| defog-sqlcoder-70b    | 93.0 |
 | defog-sqlcoder-34b    | 84.0 |
-| gpt4-turbo-2023-11-09 | 82.5 |
-| gpt4-2023-11-09       | 82.5 |
+| gpt4-2024-01-30       | 82.0 |
+| gpt4-turbo-2024-01-30 | 78.0 |
 | defog-sqlcoder2       | 77.5 |
-| gpt4-2023-08-28       | 74.0 |
 | defog-sqlcoder-7b     | 71.0 |
-| gpt-3.5-2023-10-04    | 66.0 |
+| gpt-3.5-2024-01-30    | 65.0 |
 | claude-2              | 64.5 |
 | gpt-3.5-2023-08-28    | 61.0 |
 | claude_instant_1      | 61.0 |
 | text-davinci-003      | 52.5 |
 
-![image](https://github.com/defog-ai/sqlcoder/assets/5008293/caed3423-8e86-4952-9da1-1a5e016a4696)
-
+![Percentage of correctly generated SQL queries on novel schemas not seen in training (n = 200) in SQL-Eval](https://github.com/defog-ai/sqlcoder/assets/5008293/839aa98f-101d-4baa-8e80-bb4fd5110012)]
 
 ## License
 The code in this repo (what little there is of it) is Apache-2 licensed. The model weights have a `CC BY-SA 4.0` license. The TL;DR is that you can use and modify the model for any purpose – including commercial use. However, if you modify the weights (for example, by fine-tuning), you must open-source your modified weights under the same license terms.
@@ -37,20 +36,16 @@ Defog was trained on more than 20,000 human-curated questions. These questions w
 You can read more about our [training approach](https://defog.ai/blog/open-sourcing-sqlcoder2-7b/) and [evaluation framework](https://defog.ai/blog/open-sourcing-sqleval/).
 
 ## Results by question category
-We classified each generated question into one of 5 categories. The table displays the percentage of questions answered correctly by each model, broken down by category.
-|                | date | group_by | order_by | ratio | join | where |
-| -------------- | ---- | -------- | -------- | ----- | ---- | ----- |
-| sqlcoder-34b   | 80   | 94.3     | 88.6     | 74.3  | 82.9 | 82.9  |
-| gpt-4          | 68   | 94.3     | 85.7     | 77.1  | 85.7 | 80    |
-| sqlcoder2-15b  | 76   | 80       | 77.1     | 60    | 77.1 | 77.1  |
-| sqlcoder-7b    | 64   | 82.9     | 74.3     | 54.3  | 74.3 | 74.3  |
-| gpt-3.5        | 68   | 77.1     | 68.6     | 37.1  | 71.4 | 74.3  |
-| claude-2       | 52   | 71.4     | 74.3     | 57.1  | 65.7 | 62.9  |
-| claude-instant | 48   | 71.4     | 74.3     | 45.7  | 62.9 | 60    |
-| gpt-3          | 32   | 71.4     | 68.6     | 25.7  | 57.1 | 54.3  |
-
-<img width="831" alt="image" src="https://github.com/defog-ai/sqlcoder/assets/5008293/79c5bdc8-373c-4abd-822e-e2c2569ed353">
-
+We classified each generated question into one of 6 categories. The table displays the percentage of questions answered correctly by each model, broken down by category.
+|               | date | group_by | order_by | ratio | join | where |
+| ------------- | ---- | -------- | -------- | ----- | ---- | ----- |
+| sqlcoder-70b  | 96   | 91.4     | 97.1     | 85.7  | 97.1 | 91.4  |
+| sqlcoder-34b  | 80   | 94.3     | 85.7     | 77.1  | 85.7 | 80    |
+| gpt-4         | 64   | 94.3     | 88.6     | 74.2  | 85.7 | 80    |
+| sqlcoder2-15b | 76   | 80       | 77.1     | 60    | 77.1 | 77.1  |
+| sqlcoder-7b   | 64   | 82.9     | 74.3     | 54.3  | 74.3 | 74.3  |
+| gpt-3.5       | 68   | 77.1     | 74.2     | 34.3  | 65.7 | 71.4  |
+| claude-2      | 52   | 71.4     | 74.3     | 57.1  | 65.7 | 62.9  |
 
 ## Using SQLCoder
 You can use SQLCoder via the `transformers` library by downloading our model weights from the Hugging Face repo. We have added sample code for [inference](./inference.py) on a [sample database schema](./metadata.sql). 
