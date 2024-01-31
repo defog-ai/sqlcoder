@@ -48,8 +48,7 @@ def run_inference(question, prompt_file="prompt.md", metadata_file="metadata.sql
             eos_token_id=eos_token_id,
             pad_token_id=eos_token_id,
         )[0]["generated_text"]
-        .split("# SQL\n")[-1]
-        .split("```")[0]
+        .split("```")[1]
         .split(";")[0]
         .strip()
         + ";"
