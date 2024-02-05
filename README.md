@@ -13,8 +13,9 @@ SQLCoder-70B and SQLCoder-34B are fine-tuned on a base CodeLlama model.
 ## Results on novel datasets not seen in training (`num_beams`=4)
 | model   | perc_correct |
 |-|-|
-| defog-sqlcoder-70b    | 93.0 |
-| defog-sqlcoder-34b    | 84.0 |
+| defog-sqlcoder-70b-alpha    | 93.0 |
+| defog-sqlcoder-7b-2    | 87.0 |
+| defog-sqlcoder-34b-alpha    | 84.0 |
 | gpt4-2024-01-30       | 82.0 |
 | gpt4-turbo-2024-01-30 | 78.0 |
 | defog-sqlcoder2       | 77.5 |
