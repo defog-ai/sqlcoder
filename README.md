@@ -1,7 +1,5 @@
 # Defog SQLCoder
-**Updated on Nov 14 to reflect benchmarks for SQLCoder-34B**
-
-Defog's SQLCoder is a state-of-the-art LLM for converting natural language questions to SQL queries.
+Defog's SQLCoder is a family of state-of-the-art LLMs for converting natural language questions to SQL queries.
 
 [Interactive Demo](https://defog.ai/sqlcoder-demo/) | [🤗 HF Repo](https://huggingface.co/defog/sqlcoder-34b-alpha) | [♾️ Colab](https://colab.research.google.com/drive/1z4rmOEiFkxkMiecAWeTUlPl0OmKgfEu7?usp=sharing) | [🐦 Twitter](https://twitter.com/defogdata)
 
