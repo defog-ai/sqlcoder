@@ -10,7 +10,7 @@ SQLCoder is a family of large language models that outperforms `gpt-4` and `gpt-
 
 SQLCoder-70B and SQLCoder-34B are fine-tuned on a base CodeLlama model.
 
-## Results on novel datasets not seen in training
+## Results on novel datasets not seen in training (`num_beams`=4)
 | model   | perc_correct |
 |-|-|
 | defog-sqlcoder-70b    | 93.0 |
