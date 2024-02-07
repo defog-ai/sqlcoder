@@ -39,7 +39,7 @@ We classified each generated question into one of 6 categories. The table displa
 |                | date | group_by | order_by | ratio | join | where |
 | -------------- | ---- | -------- | -------- | ----- | ---- | ----- |
 | sqlcoder-70b   | 96   | 91.4     | 97.1     | 85.7  | 97.1 | 91.4  |
-| sqlcoder-7b    | 96   | 91.4     | 94.3     | 91.4  | 94.3 | 77.1  |
+| sqlcoder-7b-2  | 96   | 91.4     | 94.3     | 91.4  | 94.3 | 77.1  |
 | sqlcoder-34b   | 80   | 94.3     | 85.7     | 77.1  | 85.7 | 80    |
 | gpt-4          | 72   | 94.3     | 97.1     | 80    | 91.4 | 80    |
 | gpt-4-turbo    | 76   | 91.4     | 91.4     | 62.8  | 88.6 | 77.1  |
