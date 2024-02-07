@@ -21,7 +21,7 @@ SQLCoder has not been tested on other platforms yet. Contributions for testing o
 In your terminal, run
 `sqlcoder launch`
 
-With this, you will be able to add your metadata and query your data visually.
+With this, you will be able to connect straight to your database, so you can add your metadata and query it visually.
 
 ## License
 The code in this repo (what little there is of it) is Apache-2 licensed. The model weights have a `CC BY-SA 4.0` license. The TL;DR is that you can use and modify the model for any purpose – including commercial use. However, if you modify the weights (for example, by fine-tuning), you must open-source your modified weights under the same license terms.
