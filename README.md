@@ -15,7 +15,7 @@ If running on a device with an NVIDIA GPU with more than 16GB VRAM (best perform
 If running on Apple Silicon (medium performance)
 `CMAKE_ARGS="-DLLAMA_METAL=on" pip install "sqlcoder[llama-cpp]"`
 
-SQLCoder has not been tested on other platforms yet. Support is very welcome!
+SQLCoder has not been tested on other platforms yet. Contributions for testing on other platforms are very welcome!
 
 ## Running SQLCoder
 In your terminal, run
