@@ -19,7 +19,7 @@ setup(
     name="sqlcoder",
     packages=find_packages(),
     package_data={"sqlcoder": next_static_files},
-    version="0.2.0",
+    version="0.2.1",
     description="SQLCoder is a large language model for converting text questions in SQL queries.",
     author="Defog, Inc",
     license="Apache-2",
@@ -31,7 +31,7 @@ setup(
         "pandas",
         "sqlparse",
         "argparse",
-        "tqdm",
+        "huggingface-hub",
     ],
     entry_points={
         "console_scripts": [

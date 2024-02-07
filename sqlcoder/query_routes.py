@@ -1,11 +1,10 @@
 from fastapi import APIRouter, Request
 import os
 import sys
-import requests
-import tqdm
 import json
 from defog import Defog
 from defog.query import execute_query_once
+from huggingface_hub import hf_hub_download
 
 router = APIRouter()
 
@@ -54,25 +53,11 @@ else:
 
     if not os.path.exists(filepath):
         print(
-            "Downloading the SQLCoder-7b GGUF file. This is a 4GB file and may take a long time to download..."
+            "Downloading the SQLCoder-7b GGUF file. This is a 4GB file and may take a long time to download. But once it's downloaded, it will be saved on your machine and you won't have to download it again."
         )
 
         # download the gguf file from the internet and save it
-        url = "https://huggingface.co/defog/sqlcoder-7b-2/blob/main/sqlcoder-7b-q5_k_m.gguf"
-        response = requests.get(url, stream=True)
-
-        total_size = int(response.headers.get("content-length", 0))
-        block_size = 1024  # 1 Kibibyte
-        t = tqdm(total=total_size, unit="B", unit_scale=True, unit_divisor=1024)
-
-        with open(filepath, "wb") as f:
-            for data in response.iter_content(block_size):
-                t.update(len(data))
-                f.write(data)
-
-        t.close()
-        if total_size != 0 and t.n != total_size:
-            print("ERROR, something went wrong while downloading the file")
+        hf_hub_download(repo_id="defog/sqlcoder-7b-2", filename="sqlcoder-7b-q5_k_m.gguf", local_dir=defog_path)
     
     if device_type == "apple_silicon":
         llm = Llama(model_path=filepath, n_gpu_layers=1, n_ctx=4096)
