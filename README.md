@@ -6,35 +6,22 @@ Defog's SQLCoder is a family of state-of-the-art LLMs for converting natural lan
 ## TL;DR
 SQLCoder is a family of large language models that outperforms `gpt-4` and `gpt-4-turbo` for natural language to SQL generation tasks on our [sql-eval](https://github.com/defog-ai/sql-eval) framework, and significantly outperform all popular open-source models.
 
-SQLCoder-7B, SQLCoder-34B, and SQLCoder-70B are fine-tuned on a base CodeLlama model.
+![Percentage of correctly generated SQL queries on novel schemas not seen in training (n = 200) in SQL-Eval](https://github.com/defog-ai/sqlcoder/assets/5008293/839aa98f-101d-4baa-8e80-bb4fd5110012)]
 
 ## Installing SQLCoder
 If running on a device with an NVIDIA GPU with more than 16GB VRAM (best performance)
-`pip install sqlcoder[transformers]`
+`pip install "sqlcoder[transformers]"`
 
 If running on Apple Silicon (medium performance)
-`CMAKE_ARGS="-DLLAMA_METAL=on" pip install sqlcoder[llama-cpp]`
+`CMAKE_ARGS="-DLLAMA_METAL=on" pip install "sqlcoder[llama-cpp]"`
 
 SQLCoder has not been tested on other platforms yet. Support is very welcome!
 
+## Running SQLCoder
+In your terminal, run
+`sqlcoder launch`
 
-## Results on novel datasets not seen in training (`num_beams`=4)
-| model   | perc_correct |
-|-|-|
-| defog-sqlcoder-70b-alpha    | 93.0 |
-| defog-sqlcoder-7b-2    | 90.5 |
-| defog-sqlcoder-34b-alpha    | 84.0 |
-| gpt4-2024-01-30       | 82.0 |
-| gpt4-turbo-2024-01-30 | 78.0 |
-| defog-sqlcoder2       | 77.5 |
-| defog-sqlcoder-7b     | 71.0 |
-| gpt-3.5-2024-01-30    | 65.0 |
-| claude-2              | 64.5 |
-| gpt-3.5-2023-08-28    | 61.0 |
-| claude_instant_1      | 61.0 |
-| text-davinci-003      | 52.5 |
-
-![Percentage of correctly generated SQL queries on novel schemas not seen in training (n = 200) in SQL-Eval](https://github.com/defog-ai/sqlcoder/assets/5008293/839aa98f-101d-4baa-8e80-bb4fd5110012)]
+With this, you will be able to add your metadata and query your data visually.
 
 ## License
 The code in this repo (what little there is of it) is Apache-2 licensed. The model weights have a `CC BY-SA 4.0` license. The TL;DR is that you can use and modify the model for any purpose – including commercial use. However, if you modify the weights (for example, by fine-tuning), you must open-source your modified weights under the same license terms.
