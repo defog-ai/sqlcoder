@@ -27,7 +27,7 @@ def get_tokenizer_model(model_name):
     return tokenizer, model
 
 def run_inference(question, prompt_file="prompt.md", metadata_file="metadata.sql"):
-    tokenizer, model = get_tokenizer_model("defog/sqlcoder-34b-alpha")
+    tokenizer, model = get_tokenizer_model("defog/sqlcoder-7b-2")
     prompt = generate_prompt(question, prompt_file, metadata_file)
     
     # make sure the model stops generating at triple ticks
