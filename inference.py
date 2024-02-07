@@ -58,7 +58,7 @@ def run_inference(question, prompt_file="prompt.md", metadata_file="metadata.sql
 
 if __name__ == "__main__":
     # Parse arguments
-    _default_question="Do we get more revenue from customers in New York compared to customers in San Francisco? Give me the total revenue for each city, and the difference between the two."
+    _default_question="Do we get more sales from customers in New York compared to customers in San Francisco? Give me the total sales for each city, and the difference between the two."
     parser = argparse.ArgumentParser(description="Run inference on a question")
     parser.add_argument("-q","--question", type=str, default=_default_question, help="Question to run inference on")
     args = parser.parse_args()
