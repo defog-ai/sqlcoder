@@ -2,7 +2,7 @@ import os
 import sys
 import sqlcoder
 import subprocess
-from huggingface_hub import snapshot_download
+from huggingface_hub import snapshot_download, hf_hub_download
 
 USAGE_STRING = """
 Usage: sqlcoder <command>
@@ -67,7 +67,7 @@ def launch():
             print(
                 "Downloading the SQLCoder-7b-2 GGUF file. This is a ~5GB file and may take a long time to download. But once it's downloaded, it will be saved on your machine and you won't have to download it again."
             )
-            sqlcoder.hf_hub_download(repo_id="defog/sqlcoder-7b-2", filename="sqlcoder-7b-q5_k_m.gguf", local_dir=defog_path)
+            hf_hub_download(repo_id="defog/sqlcoder-7b-2", filename="sqlcoder-7b-q5_k_m.gguf", local_dir=defog_path)
     else:
         # check if the huggingface model is already downloaded from hub. If not, download it
         from huggingface_hub import snapshot_download
