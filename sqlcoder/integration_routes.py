@@ -117,6 +117,6 @@ async def update_metadata(request: Request):
         )
     
     with open(os.path.join(defog_path, "metadata.json"), "w") as f:
-        json.dump(metadata, f)
+        json.dump(table_metadata, f)
     
     return {"status": "success"}
