@@ -19,7 +19,7 @@ setup(
     name="sqlcoder",
     packages=find_packages(),
     package_data={"sqlcoder": next_static_files},
-    version="0.2.3",
+    version="0.2.4",
     description="SQLCoder is a large language model for converting text questions in SQL queries.",
     author="Defog, Inc",
     license="Apache-2",
