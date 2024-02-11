@@ -60,7 +60,7 @@ else:
         hf_hub_download(repo_id="defog/sqlcoder-7b-2", filename="sqlcoder-7b-q5_k_m.gguf", local_dir=defog_path)
     
     if device_type == "apple_silicon":
-        llm = Llama(model_path=filepath, n_gpu_layers=1, n_ctx=4096)
+        llm = Llama(model_path=filepath, n_gpu_layers=-1, n_ctx=4096)
     else:
         llm = Llama(model_path=filepath, n_ctx=4096)
 
