@@ -6,13 +6,14 @@ Defog's SQLCoder is a family of state-of-the-art LLMs for converting natural lan
 ## TL;DR
 SQLCoder is a family of large language models that outperforms `gpt-4` and `gpt-4-turbo` for natural language to SQL generation tasks on our [sql-eval](https://github.com/defog-ai/sql-eval) framework, and significantly outperform all popular open-source models.
 
-![Percentage of correctly generated SQL queries on novel schemas not seen in training (n = 200) in SQL-Eval](https://github.com/defog-ai/sqlcoder/assets/5008293/839aa98f-101d-4baa-8e80-bb4fd5110012)]
+![Percentage of correctly generated SQL queries on novel schemas not seen in training (n = 200), with 4 beams (2)](https://github.com/defog-ai/sqlcoder/assets/5008293/22b891db-2201-4b30-a52d-22376ba8ec86)
+
 
 ## Installing SQLCoder
 If running on a device with an NVIDIA GPU with more than 16GB VRAM (best performance)
 `pip install "sqlcoder[transformers]"`
 
-If running on Apple Silicon (medium performance)
+If running on Apple Silicon (less good performance, because of quantization and lack of beam search)
 `CMAKE_ARGS="-DLLAMA_METAL=on" pip install "sqlcoder[llama-cpp]"`
 
 SQLCoder has not been tested on other platforms yet. Contributions for testing on other platforms are very welcome!
