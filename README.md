@@ -66,3 +66,7 @@ SQLCoder-34B has been tested on a 4xA10 GPU with `float16` weights. You can also
 - [x] Train the model on more data, with higher data variance
 - [ ] Tune the model further with Reward Modelling and RLHF
 - [ ] Pretrain a model from scratch that specializes in SQL analysis
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=defog-ai/sqlcoder&type=Date)](https://star-history.com/#defog-ai/sqlcoder&Date)
