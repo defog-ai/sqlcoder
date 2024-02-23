@@ -16,6 +16,15 @@ If running on a device with an NVIDIA GPU with more than 16GB VRAM (best perform
 If running on Apple Silicon (less good performance, because of quantization and lack of beam search)
 `CMAKE_ARGS="-DLLAMA_METAL=on" pip install "sqlcoder[llama-cpp]"`
 
+If running on a non-apple silicon computer without GPU access, please run this on Linux/Intel Mac
+`CMAKE_ARGS="-DLLAMA_BLAS=ON -DLLAMA_BLAS_VENDOR=OpenBLAS" pip install "sqlcoder[llama-cpp]"`
+
+And run this on Windows
+```bash
+$env:CMAKE_ARGS = "-DLLAMA_BLAS=ON -DLLAMA_BLAS_VENDOR=OpenBLAS"
+pip install "sqlcoder[llama-cpp]"
+```
+
 SQLCoder has not been tested on other platforms yet. Contributions for testing on other platforms are very welcome!
 
 ## Running SQLCoder
